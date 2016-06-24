@@ -44,7 +44,7 @@ lol.statsjoueur <- function(id, serveur, saison, key){
 # La fonction renvoie une liste de 3 elements
 # "summinerId" avec l'Id du joueur
 # "modifyDate" qui renvoie la date de derniere modification
-# "champions" qui renvoie une liste dans une liste, c'est vraiment bordelique, alors il y a une fonction pour gérer cette partie là
+# "champions" qui renvoie une liste dans une liste, c'est vraiment bordelique, alors il y a une fonction pour gerer cette partie la
 
 #######################################################
 #lol.statsjoueur.clean
