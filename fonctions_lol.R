@@ -9,6 +9,7 @@
 # Il faut renseigner le serveur comme euw, eune etc...
 # La saison est designe en année
 # La key est la clef d'utilisation des api persos
+
 lol.idjoueur <- function(pseudo, serveur, saison, key){
   
   fichier.json<-paste("https://",serveur,".api.pvp.net/api/lol/",serveur,"/v1.4/summoner/by-name/",pseudo,"?api_key=",key,sep="")
@@ -68,7 +69,7 @@ lol.statsjoueur.clean<- function(statsjoueur){
 #####################################################
 #lol.basechampions
 ###################################################
-#Les infos de base sur un champions
+#La fonction renvoie la liste des champions
 
 lol.basechampions<- function(serveur, key){
   
@@ -85,3 +86,7 @@ lol.basechampions<- function(serveur, key){
   
   return(list(names,ids))
 }
+
+# La fonction renvoie une liste
+# Le premier element est un vecteur de chaine de character avec le nom des champions
+# Le deuxieme un vecteur avec le numero des champions dans l'ordre du premier vecteur
