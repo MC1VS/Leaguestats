@@ -46,6 +46,25 @@ lol.statsjoueur <- function(id, serveur, saison, key){
 # "modifyDate" qui renvoie la date de derniere modification
 # "champions" qui renvoie une liste dans une liste, c'est vraiment bordelique, alors il y a une fonction pour gérer cette partie là
 
+#######################################################
+#lol.statsjoueur.clean
+######################################################
+# Le principe est de nettoyer les informations reçus par lol.statjoueur
+# Pour cela, il faut y rentrer le tableau "champions" obtenu par lol.statsjoueur
+
+lol.statsjoueur.clean<- function(statsjoueur){
+  data <- unlist(statsjoueur)
+  nrow <- nrow(statsjoueur)
+  ncol <- length(unlist(statsjoueur))/nrow
+  dimnames <- list(c(),names(cbind(statsjoueur[1],statsjoueur$stats)))
+  stats.table<-matrix(data = data,nrow = nrow,ncol= ncol,byrow = FALSE,dimnames = dimnames)
+  
+  return(stats.table)
+}
+
+# La fonction renvoie une matrice 
+# En ligne les champions, le chmapion 0 est le total
+# En colonne les différentes variables (voir sur api riot)
 #####################################################
 #lol.basechampions
 ###################################################
