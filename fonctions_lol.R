@@ -5,9 +5,9 @@
 ######################################################
 #lol.idjoueur
 ######################################################
-# Renvois à partir du pseudo l'id du joueur
+# Renvois a partir du pseudo l'id du joueur
 # Il faut renseigner le serveur comme euw, eune etc...
-# La saison est désigné en année
+# La saison est designe en année
 # La key est la clef d'utilisation des api persos
 lol.idjoueur <- function(pseudo, serveur, saison, key){
   
