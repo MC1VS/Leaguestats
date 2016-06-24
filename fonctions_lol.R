@@ -26,7 +26,13 @@ lol.idjoueur <- function(pseudo, serveur, saison, key){
 
 ######################################################
 #lol.statsjoueur
-#####################################################
+######################################################
+# Renvoie les statistiques sur les champions en partie classee d'un joueur à partir de son id
+# Les champions sont designes en fonction de leurs id
+# Il faut renseigner le serveur comme euw, eune etc...
+# La saison est designe en année
+# La key est la clef d'utilisation des api persos
+
 lol.statsjoueur <- function(id, serveur, saison, key){
   
   fichier.json <-paste("https://",serveur,".api.pvp.net/api/lol/",serveur,"/v1.3/stats/by-summoner/",id,"/ranked?season=SEASON",saison,"&api_key=",key,sep="")
@@ -34,6 +40,12 @@ lol.statsjoueur <- function(id, serveur, saison, key){
   return(liste)
   
 }
+
+# La fonction renvoie une liste de 3 elements
+# "summinerId" avec l'Id du joueur
+# "modifyDate" qui renvoie la date de derniere modification
+# "champions" qui renvoie une liste dans une liste, c'est vraiment bordelique, alors il y a une fonction pour gérer cette partie là
+
 #####################################################
 #lol.basechampions
 ###################################################
