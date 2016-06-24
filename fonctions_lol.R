@@ -5,7 +5,10 @@
 ######################################################
 #lol.idjoueur
 ######################################################
-# Renvois à partir du pseudo l'id du joueur
+# Renvois a partir du pseudo l'id du joueur
+# Il faut renseigner le serveur comme euw, eune etc...
+# La saison est designe en année
+# La key est la clef d'utilisation des api persos
 lol.idjoueur <- function(pseudo, serveur, saison, key){
   
   fichier.json<-paste("https://",serveur,".api.pvp.net/api/lol/",serveur,"/v1.4/summoner/by-name/",pseudo,"?api_key=",key,sep="")
@@ -13,6 +16,14 @@ lol.idjoueur <- function(pseudo, serveur, saison, key){
   return(liste)
   
 }
+# Le resultat est une liste avec 1 element qui a pour nom le pseudo du joueur
+# Cet element est une liste avec 5 elements
+# "id" qui contient l'id du joueur
+# "name" qui contient le pseudo du joueur
+# "profileIconId" qui contient le numeros de l'icone d'invocateur
+# "summonerlevel" qui contient le niveau du joueur
+# "revisionDate" contient un nombre qui doit représenter la date
+
 ######################################################
 #lol.statsjoueur
 #####################################################
