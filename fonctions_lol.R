@@ -4,7 +4,9 @@
 # lol.idjoueur : renvoie l'id d'un joueur avec son pseudo
 # lol.statsjoueur : renvoie les stats d'un joueur avec son id
 # lol.statsjoueur.clean : renvoie une matrice propre de stats depuis le 3eme element de resultat de la fonction lol.statsjoueur
-# #lol.basechampions : renvoie la liste des chmapions
+# lol.basechampions : renvoie la liste des champions
+
+# lol.staticdata.version : renvoie le numeros de la derniere version du site des donnees fixes
 
 ######################################################
 #lol.idjoueur
@@ -94,3 +96,19 @@ lol.basechampions<- function(serveur, key){
 # La fonction renvoie une liste
 # Le premier element est un vecteur de chaine de character avec le nom des champions
 # Le deuxieme un vecteur avec le numero des champions dans l'ordre du premier vecteur
+#####################################################
+#lol.staticdata.version
+#####################################################
+# La fonction renvoie la derniere version du site de donnéees (images, icones...)
+
+lol.staticdata.version<- function(server, key){
+  fichier.json <-paste("https://global.api.pvp.net/api/lol/static-data/",serveur,"/v1.2/versions?api_key=",key,sep="")
+  vecteur<-fromJSON(fichier.json)
+  
+  return(vecteur)
+}
+
+# La fonction retroune un vecteur character avec l'ensemble des numeros de versions, le [1] est la version actuelle
+###################################################
+#
+####################################################
