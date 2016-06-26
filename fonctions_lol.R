@@ -118,3 +118,7 @@ lol.staticdata.version<- function(server, key){
 ###################################################
 #
 ####################################################
+
+
+
+#La  fonction renvoie une liste d'image
