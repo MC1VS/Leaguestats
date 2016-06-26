@@ -11,7 +11,6 @@ library(shiny)
 library(jsonlite)
 library(curl)
 library(httr)
-library(shiny)
 library(DT)
 source("fonctions_lol.R")
 
