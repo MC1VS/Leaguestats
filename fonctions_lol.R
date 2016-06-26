@@ -1,7 +1,10 @@
 #############################################################################
 #Fonctions LOL
 #############################################################################
+<<<<<<< HEAD
 # Les fonctions necessite les packages :
+=======
+>>>>>>> refs/remotes/origin/master
 # library(jsonlite)
 # library(curl)
 # library(httr)
