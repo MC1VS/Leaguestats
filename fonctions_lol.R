@@ -1,6 +1,7 @@
 #############################################################################
 #Fonctions LOL
 #############################################################################
+# Les fonctions necessite les packages :
 # library(jsonlite)
 # library(curl)
 # library(httr)
