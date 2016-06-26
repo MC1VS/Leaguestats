@@ -18,7 +18,8 @@ source("fonctions_lol.R")
 ui <- shinyUI(fluidPage(
    
    # Application title
-   titlePanel("LoL - Stats"),
+   titlePanel("LoL - Statsi"),
+   tags$img(height = 100,width = 100,scr="http://www.rstudio.com/images/RStudio.2x.png"),
    
    # Sidebar with a slider input for number of bins 
    sidebarLayout(
@@ -80,6 +81,7 @@ server <- shinyServer(function(input, output){
     data.stats[,1]<-table.champion[,2][nom.champion.play]
     data.stats
   })
+  
   
   output$statsTable <- DT::renderDataTable(DT::datatable({
     stats.player()
