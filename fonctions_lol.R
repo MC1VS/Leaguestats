@@ -1,6 +1,10 @@
 #############################################################################
 #Fonctions LOL
 #############################################################################
+# library(jsonlite)
+# library(curl)
+# library(httr)
+#############################################################################
 # lol.idjoueur : renvoie l'id d'un joueur avec son pseudo
 # lol.statsjoueur : renvoie les stats d'un joueur avec son id
 # lol.statsjoueur.clean : renvoie une matrice propre de stats depuis le 3eme element de resultat de la fonction lol.statsjoueur
