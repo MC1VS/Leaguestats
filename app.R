@@ -18,8 +18,13 @@ source("fonctions_lol.R")
 ui <- shinyUI(fluidPage(
    
    # Application title
+<<<<<<< HEAD
    titlePanel("LoL - Statsi"),
    tags$img(height = 100,width = 100,scr="http://www.rstudio.com/images/RStudio.2x.png"),
+=======
+   titlePanel("LoL - Stats"),
+   tags$img(height=100, width = 200, src="http://ddragon.leagueoflegends.com/cdn/6.12.1/img/champion/Aatrox.png "),
+>>>>>>> refs/remotes/Kazeel/master
    
    # Sidebar with a slider input for number of bins 
    sidebarLayout(
