@@ -116,5 +116,15 @@ lol.staticdata.version<- function(server, key){
 
 # La fonction retroune un vecteur character avec l'ensemble des numeros de versions, le [1] est la version actuelle
 ###################################################
-#
+#lol.staticdata.image
 ####################################################
+# La fonction renvoie l'adresse de l'image d'un champion
+# Les parametres sont : 
+# champion : le nom du champion (chaine de charactere)
+# 
+# version : la version de staticdata (utiliser la fonction lol.staticdata.version)
+
+
+lol.staticdata.square<- function(){
+  
+}

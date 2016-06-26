@@ -19,6 +19,7 @@ ui <- shinyUI(fluidPage(
    
    # Application title
    titlePanel("LoL - Stats"),
+   tags$img(height=100, width = 200, src="http://ddragon.leagueoflegends.com/cdn/6.12.1/img/champion/Aatrox.png "),
    
    # Sidebar with a slider input for number of bins 
    sidebarLayout(
