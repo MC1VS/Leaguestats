@@ -14,34 +14,49 @@ library(httr)
 library(DT)
 source("fonctions_lol.R")
 
+
+
 # Define UI for application that draws a histogram
-ui <- shinyUI(fluidPage(
-   
-   # Application title
-<<<<<<< HEAD
-   titlePanel("LoL - Statsi"),
-   tags$img(height = 100,width = 100,scr="http://www.rstudio.com/images/RStudio.2x.png"),
-=======
-   titlePanel("LoL - Stats"),
-   tags$img(height=100, width = 200, src="http://ddragon.leagueoflegends.com/cdn/6.12.1/img/champion/Aatrox.png "),
->>>>>>> refs/remotes/Kazeel/master
-   
-   # Sidebar with a slider input for number of bins 
-   sidebarLayout(
-      sidebarPanel(
-        textInput(inputId = "pseudo",label = "Pseudo : ",value = "Kazeel"),
-        selectizeInput('serveur', 'Serveur : ', choices = c("euw","na")),
-        selectizeInput('saison', 'Saison : ', choices = c(2016,2015)),
-        actionButton("search", "Search"),
-        width = 2
-      ),
-      
-      # Show a plot of the generated distribution
-      mainPanel(
-        dataTableOutput("statsTable")
-      )
-   )
-))
+ui <- shinyUI(
+  
+  #incrementation de la barre de navigation
+  navbarPage("barre de navigation",
+             
+     #premiere page
+      tabPanel("player's champion's stat",
+            #en tete html
+             tags$head(
+               tags$link(rel = "stylesheet", type = "text/css", href = "bootstrap.css"),
+               tags$br()
+               ),
+  
+            # header
+            tags$header(titlePanel("LoL - Stats"),
+            tags$img(height=100, width = 100, src="http://ddragon.leagueoflegends.com/cdn/6.12.1/img/champion/Ashe.png ")),
+             # Sidebar with a slider input for number of bins 
+              sidebarLayout(
+                sidebarPanel(
+                  textInput(inputId = "pseudo",label = "Pseudo : ",value = "Kazeel"),
+                  selectizeInput('serveur', 'Serveur : ', choices = c("euw","na")),
+                  selectizeInput('saison', 'Saison : ', choices = c(2016,2015)),
+                  actionButton("search", "Search"),
+                  width = 2 ),
+    
+            # Show a plot of the generated distribution
+              mainPanel(
+                #creation balise article pour visualisation du tableau
+                tags$article(dataTableOutput("statsTable")))
+              )
+            ),
+     #deuxieme page
+     tabPanel("2player's champion's stat",
+          tags$b("2eme page"))
+    #fermeture barre naviggation
+    )
+  #fermeture shiny
+  )
+
+
 
 # Define server logic required to draw a histogram
 server <- shinyServer(function(input, output){
@@ -87,7 +102,6 @@ server <- shinyServer(function(input, output){
     data.stats
   })
   
-  
   output$statsTable <- DT::renderDataTable(DT::datatable({
     stats.player()
   }))
@@ -95,4 +109,3 @@ server <- shinyServer(function(input, output){
 })
 # Run the application 
 shinyApp(ui = ui, server = server)
-

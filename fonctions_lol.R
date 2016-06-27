@@ -71,7 +71,6 @@ lol.statsjoueur.clean<- function(statsjoueur){
   ncol <- length(unlist(statsjoueur))/nrow
   dimnames <- list(c(),names(cbind(statsjoueur[1],statsjoueur$stats)))
   stats.table<-matrix(data = data,nrow = nrow,ncol= ncol,byrow = FALSE,dimnames = dimnames)
-  
   return(stats.table)
 }
 
