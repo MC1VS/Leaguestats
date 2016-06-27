@@ -49,7 +49,7 @@ ui <- shinyUI(
               )
             ),
      #deuxieme page
-     tabPanel("2player's champion's stat",
+     tabPanel("2nd page",
           tags$b("2eme page"))
     #fermeture barre naviggation
     )
